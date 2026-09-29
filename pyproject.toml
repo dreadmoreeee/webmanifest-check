@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "webmanifest-check"
+version = "1.0.0"
+description = "Check a site's web app manifest and icons, and generate missing icon sizes."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Marvin Palencia" }]
+dependencies = ["Pillow>=9.1"]
+keywords = ["pwa", "webmanifest", "icons", "lint"]
+
+[project.optional-dependencies]
+browser = ["playwright>=1.40"]
+test = ["pytest"]
+
+[project.scripts]
+webmanifest-check = "webmanifest_check.cli:main"
+
+[tool.setuptools]
+packages = ["webmanifest_check"]
